@@ -1,0 +1,691 @@
+local plr = game:GetService("Players").LocalPlayer
+local whitelistedPeople
+local isWhitelisted = false
+
+local buttons = {}
+
+print("THANK YOU FOR USING CUBEWARE! -@salim_911111YT")
+
+local function uninject(bool : boolean, noHarm : boolean)
+	if bool ~= nil and noHarm ~= nil then
+		if bool == true or bool == "UNINJECT_584" then
+			pcall(function()
+				for _, v in pairs(plr.PlayerGui:GetChildren()) do
+					if v:IsA("Hint") then
+						v:Destroy()
+					end
+				end
+
+				if noHarm == false then
+					if plr.PlayerGui:FindFirstChild("HACKS_GUI_CUBEWARE_BY_salim_911111YT") then
+						plr.PlayerGui:WaitForChild("HACKS_GUI_CUBEWARE_BY_salim_911111YT"):Destroy()
+					end
+				end
+			end)
+		end
+	end
+end
+
+local function setup(userName, debug : boolean)
+	local msg_ = Instance.new("Hint", plr.PlayerGui)
+	local corout1
+
+	msg_.Text = "The game is loading... Please wait."
+	msg_.Parent = plr.PlayerGui
+	msg_.Name = "haxNotif_"
+
+	if plr.PlayerGui:FindFirstChild("HACKS_GUI_CUBEWARE_BY_salim_911111YT") then
+		local msg__ = Instance.new("Hint", plr.PlayerGui)
+
+		for _, v in pairs(plr.PlayerGui:GetDescendants()) do
+			if v:IsA("Hint") then
+				v:Destroy()
+			end
+		end
+
+		msg__.Name = "WARNING"
+		msg__.Text = "Auto uninjecting because theres already a menu."
+		game:GetService("Debris"):AddItem(msg_, 5)
+		task.wait(5)
+		uninject(true, true)
+	end
+
+	repeat task.wait(game:GetService("RunService").Heartbeat:Wait()) until game:IsLoaded()
+
+	local msg = Instance.new("Hint", plr.PlayerGui)
+
+	msg.Text = "Loading Cube Ware..."
+	msg.Parent = plr.PlayerGui
+	msg.Name = "haxNotif"
+
+	repeat task.wait(game:GetService("RunService").Heartbeat:Wait()) until game:IsLoaded()
+
+	msg:Destroy()
+
+	if userName ~= nil then
+		local sucess, error = pcall(function()
+			local Button2_enabled = false;
+			local Button3_enabled = false;
+			local button6_enabled = false;
+			local button7_enabled = false;
+			local button8_enabled = false;
+			local button9_enabled = false;
+
+			local hacksGui = Instance.new("ScreenGui", plr.PlayerGui)
+
+			local screenGui = Instance.new("ScreenGui"); 
+			local frameNew = Instance.new("Frame", screenGui)
+			local message = Instance.new("Hint", plr.PlayerGui)
+			local frame = Instance.new("ScrollingFrame")
+			local string = Instance.new("StringValue", screenGui)
+			local textLabel = Instance.new("TextLabel", frameNew)
+
+			hacksGui.Enabled = true
+			hacksGui.Name = "HACKS_GUI_CUBEWARE_BY_salim_911111YT"
+
+			textLabel.TextScaled = true;
+			textLabel.BackgroundTransparency = 1
+			textLabel.Text = "CubeWare! (Best Closet Cheat Client)"
+			textLabel.Size = UDim2.new(1, 0, 0.25, 0)
+
+			string.Name = "OWNER"
+			string.Value = tostring(userName)
+
+			message.Text = "INSANE BEDWARZ CLIENT GUI!!! (Made by salim_911111YT), will be gone in 10 secs."
+
+			screenGui.Name = "HacksGui";
+			screenGui.Parent = hacksGui;
+
+			frameNew.Name = "MainFrame";
+			frameNew.Size = UDim2.new(0.5, 0, 0.5, 0); 
+			frameNew.Position = UDim2.new(0.25, 0, 0.25, 0); 
+
+			frame.Parent = frameNew
+			frame.Size = frameNew.Size
+			frame.Position = frameNew.Position
+			frame.BackgroundTransparency = 1
+			
+			Instance.new("UICorner").Parent = frameNew;
+			Instance.new("UIDragDetector").Parent = frameNew; 
+
+			local uiList = Instance.new("UIListLayout"); 
+
+			uiList.Parent = frame; 
+			uiList.Wraps = true
+			uiList.FillDirection = Enum.FillDirection.Horizontal
+
+			local button = Instance.new("TextButton"); 
+
+			button.Text = "BAN PLAYERS (NOT YOU) [MAY NOT WORK]"; 
+			button.TextScaled = true;
+			button.Parent = frame; 
+			button.Size = UDim2.new(0.2, 0, 0.1, 0);
+			
+			local button2 = Instance.new("TextButton");
+
+			button2.RichText = true
+			button2.Text = 'Anti Void <font color="#00ff00">(NEW!)</font>';
+			button2.TextScaled = true;
+			button2.Parent = frame;
+			button2.Size = UDim2.new(0.2, 0, 0.1, 0)
+
+			local button3 = Instance.new("TextButton")
+
+			button3.Text = 'Kill Aura [BETA] <font color="#00ff00">(NEW!)</font>'
+			button3.TextScaled = true
+			button3.Parent = frame;
+			button3.RichText = true
+			button3.Size = UDim2.new(0.2, 0, 0.1, 0)
+
+			local button4 = Instance.new("TextButton")
+
+			button4.Text = "ANTI SUFFO (WORKS!) (ONE TIME ONLY)"
+			button4.TextScaled = true;
+			button4.Parent = frame;
+			button4.Size = UDim2.new(0.2, 0, 0.1, 0)
+
+			local button5 = Instance.new("TextButton")
+			local box1 = Instance.new("TextBox", button5)
+
+			button5.Text = "WARN OTHERS (WORKS!)"
+			button5.TextScaled = true
+			button5.Parent = frame;
+			button5.Size = UDim2.new(0.2, 0, 0.1, 0)
+			box1.Position = button5.Position - UDim2.new(0, 0, 0, 20)
+
+			local button6 = Instance.new("TextButton")
+
+			button6.Text = "No Knockback"
+			button6.TextScaled = true;
+			button6.Parent = frame;
+			button6.Size = UDim2.new(0.2, 0, 0.1, 0)
+
+			local button7 = Instance.new("TextButton")
+
+			button7.Text = "Scaffold"
+			button7.TextScaled = true;
+			button7.Parent = frame;
+			button7.Size = UDim2.new(0.2, 0, 0.1, 0)
+
+			local button8 = Instance.new("TextButton")
+
+			button8.Text = 'Infinite Jump <font color="#00ff00">(NEW!)</font>'
+			button8.TextScaled = true;
+			button8.RichText = true
+			button8.Parent = frame;
+			button8.Size = UDim2.new(0.2, 0, 0.1, 0)
+
+			local button9 = Instance.new("TextButton")
+
+			button9.Text = 'Auto Mine <font color="#00ff00">(NEW!)</font>'
+			button9.TextScaled = true;
+			button9.RichText = true
+			button9.Parent = frame;
+			button9.Size = UDim2.new(0.2, 0, 0.1, 0)
+			
+			for _, v in pairs(frame:GetChildren()) do
+				if v:IsA("TextButton") then
+					table.insert(buttons, v)
+				end
+			end
+			
+			for _, v : TextButton in pairs(buttons) do
+				if not v:FindFirstChildOfClass("UICorner") then
+					local uiCorner = Instance.new("UICorner", v)
+					
+					uiCorner.CornerRadius = UDim.new(0, 5);
+					
+					local uiStoke = Instance.new("UIStroke", v);
+					
+					uiStoke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border;
+					uiStoke.Thickness = 0.025;
+					uiStoke.Color = Color3.new(0, 0, 0);
+					uiStoke.StrokeSizingMode = Enum.StrokeSizingMode.ScaledSize
+				end
+			end
+
+			game:GetService("Debris"):AddItem(message, 10)
+
+			button.MouseButton1Down:Connect(function() 
+				local hint = Instance.new("Hint", plr.PlayerGui)
+
+				local sucess, errorMsg = pcall(function()
+					for _, v in pairs(game:GetService("Players"):GetPlayers()) do 
+						if v.Name ~= tostring(string.Value) then 
+							hint.Text = "Trying to ban plr ("..v.Name.."), the speed of this process depends on your fps."
+
+							game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BanPlayer"):FireServer(v.Name)
+							task.wait(game:GetService("RunService").Heartbeat:Wait() * 25)
+						end 
+					end
+				end)
+
+				if sucess ~= nil then
+					if sucess == false then
+						hint.Text = "Error: ("..tostring(errorMsg)..")."
+					else
+						hint.Text = "Sucessfully banned others!"
+					end
+
+					if debug == true then
+						warn("ERROR: "..tostring(errorMsg))
+					end
+
+					if sucess == true then
+						game:GetService("Debris"):AddItem(hint, 5)
+					else
+						game:GetService("Debris"):AddItem(hint, 20)
+					end
+				end
+			end)	
+
+			button2.MouseButton1Down:Connect(function()
+				Button2_enabled = not Button2_enabled
+
+				if Button2_enabled == true then
+					local basePart = Instance.new("Part", workspace)
+
+					basePart.Size = Vector3.new(2048, 1.2, 2048)
+					basePart.CFrame = plr.Character.PrimaryPart.CFrame - Vector3.new(0, 6, 0)
+					basePart.Anchored = true
+					basePart.Transparency = 0.5
+					basePart.Material = Enum.Material.DiamondPlate
+					basePart.Name = "FakeBaseplate"
+					basePart.CanCollide = true
+
+					basePart.Touched:Connect(function(hit)
+						if hit:IsDescendantOf(plr.Character) then -- Makes sure
+							plr.Character.PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 75, 0)
+							task.wait(1)
+						end
+					end)
+				else
+					for _, v in pairs(workspace:GetChildren()) do
+						if v:IsA("Part") then
+							if v.Name == "FakeBaseplate" or v.Name:find("FakeBaseplate") then
+								v:Destroy()
+							end
+						end
+					end
+				end
+			end)
+
+			button3.MouseButton1Down:Connect(function()
+				local killAuraConnection = nil
+				local coroutines = {}
+
+				Button3_enabled = not Button3_enabled
+
+				if Button3_enabled == true then
+					task.spawn(function()
+						while task.wait() do
+							if Button3_enabled == false then break end
+
+							pcall(function()
+								local Remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
+								local mouse = game.Players.LocalPlayer:GetMouse() 
+								local HumanoidRootPart = plr.Character.PrimaryPart
+								local lookVector = HumanoidRootPart.CFrame.LookVector
+								local mouseDirection = mouse.UnitRay.Direction -- Make it a 360 degree angle
+								local direction = (mouseDirection + lookVector).Unit
+
+								-- local direction = Vector3.new(lookVector.X, mouseDirection.Y, lookVector.Z)
+
+								if plr.Character:FindFirstChild("Wooden Sword") then
+									local result, health = Remotes.SwordAttack:InvokeServer(direction, "Wooden Sword")
+
+									print(result, health)
+								elseif plr.Character:FindFirstChild("Stone Sword") then
+									local result, health = Remotes.SwordAttack:InvokeServer(direction, "Stone Sword")
+								elseif plr.Character:FindFirstChild("Iron Sword") then
+									local result, health = Remotes.SwordAttack:InvokeServer(direction, "Iron Sword")
+								elseif plr.Character:FindFirstChild("Diamond Sword") then
+									local result, health = Remotes.SwordAttack:InvokeServer(direction, "Diamond Sword")
+								elseif plr.Character:FindFirstChild("Emerald Sword") then
+									local result, health = Remotes.SwordAttack:InvokeServer(direction, "Emerald Sword")
+								elseif plr.Character:FindFirstChild("Obsidian Sword") then
+									local result, health = Remotes.SwordAttack:InvokeServer(direction, "Obsidian Sword")
+								end
+
+								pcall(function()
+									for _, v in pairs(plr.Character:GetChildren()) do
+										if v:IsA("Tool") then
+											if v.Name:find("Sword") then
+												if v:FindFirstChild("Handle") then
+													v:WaitForChild("Handle"):WaitForChild("Swing"):Play()
+												end
+											end
+										end
+									end
+
+									task.wait()
+								end)
+							end)
+						end
+					end)
+				else
+					if killAuraConnection then
+						coroutine.close(coroutines["KillAura"])
+						killAuraConnection:Disconnect()
+
+						for i = 1, #coroutines do
+							table.remove(coroutines, 1)
+						end
+
+						coroutines = {}
+					end
+				end
+			end)
+
+			button4.MouseButton1Down:Connect(function()
+				pcall(function()
+					while task.wait() do
+						if plr.Character:FindFirstChild("Anticheat"):WaitForChild("Anticheat"):WaitForChild("SuffocationModule") then
+							plr.Character:FindFirstChild("Anticheat"):WaitForChild("Anticheat"):WaitForChild("SuffocationModule"):Destroy()
+						end
+					end
+				end)
+			end)
+
+			button5.MouseButton1Down:Connect(function()
+				pcall(function()
+					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("WarnPlayer"):FireAllClients(tostring(box1.Text))
+				end)
+			end)
+
+			button5.MouseEnter:Connect(function()
+				box1.Visible = true
+			end)
+
+			button5.MouseLeave:Connect(function()
+				box1.Visible = false
+			end)
+
+			button6.MouseButton1Down:Connect(function()
+				button6_enabled = not button6_enabled
+
+				if button6_enabled == true then
+					coroutine.create(function()
+						while button6_enabled == true do
+							pcall(function()
+								plr.Character.PrimaryPart:SetNetworkOwner(plr)
+							end)
+
+							task.wait(game:GetService("RunService").Heartbeat:Wait())
+						end
+					end)
+				end
+			end)
+
+			button7.MouseButton1Down:Connect(function()
+				local lastGridPos = nil
+
+				button7_enabled = not button7_enabled
+
+				local function getGridPos(pos : Vector3)
+					pcall(function()
+						return Vector3.new(
+							math.floor((pos.X) / 3) * 3,
+							math.floor((pos.Y) / 3) * 3,
+							math.floor((pos.Z) / 3) * 3
+						)
+					end)
+				end
+
+				if button7_enabled then
+					task.spawn(function()
+						repeat
+							task.wait()
+
+							if lastGridPos ~= getGridPos(game:GetService("Players").LocalPlayer.Character.PrimaryPart.Position - Vector3.new(0, 3, 0)) then
+								local r = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlaceBlock")
+
+								r:InvokeServer(getGridPos(game:GetService("Players").LocalPlayer.Character.PrimaryPart.Position - Vector3.new(0, 3, 0)), "Wool")
+								lastGridPos = getGridPos(game:GetService("Players").LocalPlayer.Character.PrimaryPart.Position - Vector3.new(0, 3, 0))
+							end
+						until button7_enabled == false
+					end)
+				end
+			end)
+
+			button8.MouseButton1Down:Connect(function()
+				button8_enabled = not button8_enabled
+
+				game:GetService("UserInputService").InputBegan:Connect(function(key)
+					if key.KeyCode == Enum.KeyCode.Space then
+						if button8_enabled then
+							plr.Character.PrimaryPart.AssemblyLinearVelocity = Vector3.new(0, 99.9, 0)
+						end
+					end
+				end)
+			end)
+
+			button9.MouseButton1Down:Connect(function()
+				button9_enabled = not button9_enabled
+				
+				if button9_enabled == true then
+					local h = Instance.new("Highlight", workspace)
+					
+					task.spawn(function()
+						repeat
+							pcall(function()
+								if plr:GetMouse().Target then
+									if plr:GetMouse().Target:IsDescendantOf(workspace:WaitForChild("Map")) then
+										h.Name = "BlockMineHightlight"
+										h.Adornee = plr:GetMouse().Target
+									else
+										h.Name = "BlockMineHightlight"
+										h.Adornee = nil
+									end
+								end
+							end)
+
+							task.wait()
+						until button9_enabled == false
+						
+						if h then
+							h:Destroy()
+						end
+					end)
+					
+					task.spawn(function()
+						repeat
+							pcall(function()
+								local Remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes")
+
+								Remotes:WaitForChild("DamageBlock"):InvokeServer(plr:GetMouse().Target, plr.Character:FindFirstChildOfClass("Tool").Name)
+							end)
+							
+							task.wait(0.3)
+						until button9_enabled == false
+					end)
+				end
+			end)
+
+			local gui2 = Instance.new("ScreenGui", plr.PlayerGui)
+
+			gui2.Name = "MobileGui"
+			gui2.Parent = hacksGui
+
+			local button1_mobile = Instance.new("TextButton")
+
+			button1_mobile.Text = "ENABLE GUI"
+			button1_mobile.TextScaled = true
+			button1_mobile.Parent = gui2
+			button1_mobile.Name = "enable_gui"
+			button1_mobile.Position = UDim2.new(0.5, 0, 0.8, 0)
+			button1_mobile.Size = UDim2.new(0.1, 0, 0.12, 0)
+			
+			Instance.new("UIDragDetector", button1_mobile);
+			Instance.new("UICorner", button1_mobile);
+
+			local uninject_ = Instance.new("TextButton")
+
+			uninject_.Text = "UN INJECT"
+			uninject_.TextScaled = true
+			uninject_.Parent = hacksGui
+			uninject_.Name = "un_inject"
+			uninject_.Position = UDim2.new(0.9, 0, 0.9, 0) --UDim2.new(0.3, 0, 0.8, 0)
+			uninject_.Size = UDim2.new(0.1, 0, 0.12, 0)
+			uninject_.BackgroundColor3 = Color3.new(255, 0, 0)
+			
+			Instance.new("UICorner", uninject_);
+
+			--Instance.new("UIDragDetector", button1_mobile)
+			local showConnection = nil
+
+			hacksGui.ResetOnSpawn = false;
+			screenGui.ResetOnSpawn = false;
+			gui2.ResetOnSpawn = false;
+
+			showConnection = game:GetService("UserInputService").InputBegan:Connect(function(key)
+				if key.KeyCode == Enum.KeyCode.RightShift then
+					screenGui.Enabled = not screenGui.Enabled
+				end
+			end)
+
+			button1_mobile.MouseButton1Down:Connect(function()
+				screenGui.Enabled = not screenGui.Enabled
+			end)
+
+			plr.DescendantAdded:Connect(function(item)
+				if item:IsA("Hint") then
+					if item.Name == "haxNotif_" then
+						item:Destroy()
+					end
+				end
+			end)
+
+			uninject_.MouseButton1Up:Connect(function()
+				frame:ClearAllChildren()
+
+				if hacksGui:FindFirstChild("HacksGui") then
+					hacksGui:WaitForChild("HacksGui"):Destroy()
+				end
+
+				if hacksGui:FindFirstChild("MobileGui") then
+					hacksGui:WaitForChild("MobileGui"):Destroy()
+				end
+
+				if showConnection ~= nil then
+					if showConnection ~= nil then
+						showConnection:Disconnect()
+					end
+				end
+
+				uninject(true, false)
+			end)
+
+			local shouldAllowGlassBridgeThing = true
+
+			plr.Chatted:Connect(function(msg)
+				local msgSplit = msg:split(" ")
+
+				if msg:find("/spawn") then
+					if tostring(msgSplit[1] ~= nil) and tostring(msgSplit[2]) ~= nil and tostring(msgSplit[3]) ~= nil then
+						if tostring(msgSplit[2]) ~= nil and typeof(tonumber(msgSplit[3])) == "number" then
+							local module = require(game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("InventoryModule"))
+							local items = {
+								["Wool"] = "Blocks";
+								["Obsidian"] = "Blocks";
+								["Blastproof Ceramic"] = "Blocks";
+								["Stone Brick"] = "Blocks";
+								["Wood Plank"] = "Blocks";
+								["TNT"] = "Blocks";
+								["Slime"] = "Blocks";
+								["Iron"] = "Ressources";
+								["Diamond"] = "Ressources";
+								["Emerald"] = "Ressources";
+							}
+
+							module.AddItem(tostring(msgSplit[2]), tonumber(msgSplit[3]), items[tostring(msgSplit[2])])
+						end
+					end
+				elseif msg == "/see glass_bridge" then
+					for _, v in pairs(workspace:WaitForChild("GlassPads"):GetDescendants()) do
+						if v:IsA("Model") then
+							if v:GetAttribute("IsSafe") == false then
+								local highlight = Instance.new("Highlight", v:WaitForChild("Pad", math.huge))
+
+								highlight.Adornee = v:WaitForChild("Pad", math.huge)
+								v:WaitForChild("Pad", math.huge).Transparency = 0
+							end 
+						end
+					end
+
+					workspace:WaitForChild("GlassPads").DescendantAdded:Connect(function(child)
+						if child:IsA("Model") then
+							if child:GetAttribute("IsSafe") == false then
+								local highlight = Instance.new("Highlight", child:WaitForChild("Pad", math.huge))
+
+								highlight.Adornee = child:WaitForChild("Pad", math.huge)
+								child:WaitForChild("Pad", math.huge).Transparency = 0
+							end
+						end
+					end)
+
+					shouldAllowGlassBridgeThing = true
+				elseif msg:find("/set_speed") then
+					if tostring(msgSplit[2]) ~= nil then
+						if typeof(msgSplit[2]) == "number" then
+							if plr.Character ~= nil then
+								if plr.Character:FindFirstChildOfClass("Humanoid") then
+									plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = tonumber(msgSplit[2])
+								end
+							end
+						end
+					end
+				elseif msg == "/fix glass_bridge" then
+					while task.wait(game:GetService("RunService").Heartbeat:Wait()) do
+						if plr.Character ~= nil then
+							if plr.Character:FindFirstChildOfClass("Humanoid") then
+								plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 25
+							end
+						end
+					end
+				elseif msg == "/tp chest" then
+					plr.Character.PrimaryPart.CFrame = workspace:WaitForChild("ClaimGoldPrompt").CFrame
+				elseif msg == "/tp spectator_spawn" then
+					plr.Character.PrimaryPart.CFrame = workspace:WaitForChild("SpectatorSpawn").CFrame
+				elseif msg == "/show_projectile_hitboxes" then
+					workspace:WaitForChild("Projectiles").ChildAdded:Connect(function(child)
+						for _, v in pairs(child:GetDescendants()) do
+							if v:IsA("BasePart") and v.Name:find("Hitbox") or v.Name == "Hitbox" then
+								v.Transparency = 0.6;
+								v.CanCollide = false;
+								v.Size = child.Size --Vector3.new(60, 60, 60);
+								v.BrickColor = BrickColor.new("Really red")
+							end
+						end
+					end)
+				elseif msg:find("/tpbed") then
+					if tostring(msgSplit[2]) ~= "" then
+						if tostring(msgSplit[2]) ~= "OG" then
+							if workspace:FindFirstChild("Map") then
+								if workspace:WaitForChild("Map"):FindFirstChild("Beds") then
+									if workspace:WaitForChild("Map"):FindFirstChild("Beds"):FindFirstChild(workspace:WaitForChild("Map"):WaitForChild("Beds"):GetChildren()[tonumber(msgSplit[2])].Name) then
+										if workspace:WaitForChild("Map"):WaitForChild("Beds"):GetChildren()[tonumber(msgSplit[2])].PrimaryPart == nil then
+											return
+										end
+										
+										local bed : Model = workspace:WaitForChild("Map"):WaitForChild("Beds"):GetChildren()[tonumber(msgSplit[2])]
+										local t = game:GetService("TweenService"):Create(plr.Character.PrimaryPart, TweenInfo.new(((plr.Character.PrimaryPart.Position - bed:WaitForChild("Mattress").Position).Magnitude / 210), Enum.EasingStyle.Linear), {CFrame = CFrame.new(bed:WaitForChild("Mattress").Position + Vector3.new(0, 3, 0))})
+										
+										if plr.Character:FindFirstChildOfClass("Humanoid") then
+											plr.Character:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Landed, false)
+											t:Play()
+											t.Completed:Wait()
+											
+											task.wait(0.1)
+											plr.Character:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Landed, true)
+										end
+									end
+								end
+							end
+						elseif tostring(msgSplit[2]) == "OG" then
+							if workspace:FindFirstChild("Map") then
+								if workspace:WaitForChild("Map"):FindFirstChild("Beds") then
+									for _, v in pairs(workspace:WaitForChild("Map"):WaitForChild("Beds"):GetDescendants()) do
+										if v:IsA("Model") then
+											if v:FindFirstChild("Mattress") then
+												if v:WaitForChild("Mattress").BrickColor == plr.TeamColor then
+													if v.PrimaryPart == nil then
+														continue
+													end
+
+													local t = game:GetService("TweenService"):Create(plr.Character.PrimaryPart, TweenInfo.new((plr.Character.PrimaryPart.Position - v.Position).Magnitude / 210, Enum.EasingStyle.Linear), {CFrame = CFrame.new(v.PrimaryPart.CFrame + Vector3.new(0, 3, 0))})
+													
+													if plr.Character:FindFirstChildOfClass("Humanoid") then
+														plr.Character:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Landed, false)
+														t:Play()
+														t.Completed:Wait()
+
+														task.wait(0.1)
+														plr.Character:FindFirstChildOfClass("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.Landed, true)
+													end
+													
+													--plr.Character.PrimaryPart.CFrame = v.PrimaryPart.CFrame
+													break
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end)
+		end)
+
+		if sucess == false then
+			local hint = Instance.new("Hint", plr.PlayerGui)
+
+			hint.Text = "ERROR: "..tostring(error)..". REPORT THIS TO @salim_911111YT TO HELP FURTHER EXPLOIT."
+			warn("ERROR: "..tostring(error))
+		end
+	end
+end
+
+whitelistedPeople = {"salim_911111YT"}
+setup(plr.Name, false)
