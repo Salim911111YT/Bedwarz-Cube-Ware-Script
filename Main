@@ -92,7 +92,7 @@ local function setup(userName, debug : boolean)
 			string.Value = tostring(userName)
 
 			message.Text = "INSANE BEDWARZ CLIENT GUI!!! (Made by salim_911111YT), will be gone in 10 secs."
-
+			
 			screenGui.Name = "HacksGui";
 			screenGui.Parent = hacksGui;
 
@@ -182,6 +182,14 @@ local function setup(userName, debug : boolean)
 			button9.RichText = true
 			button9.Parent = frame;
 			button9.Size = UDim2.new(0.2, 0, 0.1, 0)
+
+            local button10 = Instance.new("TextButton")
+
+			button10.Text = 'Dex Explorer <font color="#00ff00">(NEW!)</font>'
+			button10.TextScaled = true;
+			button10.RichText = true
+			button10.Parent = frame;
+			button10.Size = UDim2.new(0.2, 0, 0.1, 0)
 			
 			for _, v in pairs(frame:GetChildren()) do
 				if v:IsA("TextButton") then
@@ -460,6 +468,12 @@ local function setup(userName, debug : boolean)
 						until button9_enabled == false
 					end)
 				end
+			end)
+
+            button10.MouseButton1Down:Connect(function()
+				pcall(function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/ryzsb/Roblox_Scripts/refs/heads/main/Dex%20Explorer.lua"))()
+				end)
 			end)
 
 			local gui2 = Instance.new("ScreenGui", plr.PlayerGui)
